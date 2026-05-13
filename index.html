@@ -3,103 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Commission Partner Application</title>
+<title>Partner Agreement & Application</title>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        margin: 0;
-        padding: 20px;
-    }
-    .container {
-        max-width: 500px;
-        background: #fff;
-        padding: 20px;
-        margin: auto;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-        text-align: center;
-        color: #333;
-    }
-    input, textarea, select {
-        width: 100%;
-        padding: 10px;
-        margin: 8px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    button {
-        width: 100%;
-        padding: 12px;
-        background: #25D366;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    button:hover {
-        background: #1ebe5d;
-    }
-    .note {
-        font-size: 12px;
-        color: gray;
-        text-align: center;
-    }
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fb;
+}
+
+.header{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+.header h1{
+    margin:0;
+    font-size:26px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#0f172a;
+}
+
+ul{
+    line-height:1.8;
+}
+
+.form-group{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+input, textarea, select{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+textarea{
+    grid-column:span 2;
+}
+
+button{
+    background:#22c55e;
+    color:white;
+    padding:12px;
+    border:none;
+    width:100%;
+    margin-top:15px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#16a34a;
+}
+
+.note{
+    font-size:13px;
+    color:gray;
+    text-align:center;
+    margin-top:10px;
+}
+
+.badge{
+    background:#e0f2fe;
+    padding:8px;
+    border-radius:6px;
+    display:inline-block;
+    margin-top:10px;
+}
 </style>
 </head>
+
 <body>
 
+<div class="header">
+    <h1>🚀 Partner Commission Program</h1>
+    <p>Join & Earn With Performance-Based Growth System</p>
+</div>
+
 <div class="container">
-    <h2>Commission Partner Form</h2>
 
-    <input type="text" id="name" placeholder="Full Name" required>
+<!-- AGREEMENT SECTION -->
+<div class="card">
+    <h2>📄 Basic Agreement Terms</h2>
 
-    <input type="text" id="phone" placeholder="Phone Number" required>
+    <div class="badge">Starting Commission: 10%</div>
 
-    <input type="email" id="email" placeholder="Email (optional)">
+    <ul>
+        <li>Commission will start at <b>10%</b> per successful lead/sale</li>
+        <li>Performance-based increase available up to higher %</li>
+        <li>Payout cycle: Weekly / Monthly (based on project)</li>
+        <li>No hidden charges or registration fees</li>
+        <li>Honest work & real client handling required</li>
+        <li>Company reserves right to verify leads before payout</li>
+    </ul>
+</div>
 
-    <input type="text" id="city" placeholder="City">
+<!-- WHY JOIN -->
+<div class="card">
+    <h2>⭐ Why Join Us?</h2>
+    <ul>
+        <li>🔥 High earning potential with performance growth</li>
+        <li>📈 Digital services industry (website, marketing, automation)</li>
+        <li>🤝 Long-term partnership opportunity</li>
+        <li>📊 Training & guidance provided</li>
+        <li>💼 Work from anywhere (freelance model)</li>
+    </ul>
+</div>
 
-    <select id="experience">
-        <option value="">Do you have experience?</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-    </select>
+<!-- FORM -->
+<div class="card">
+    <h2>📝 Candidate Application Form</h2>
 
-    <textarea id="message" rows="4" placeholder="Why do you want to join?"></textarea>
+    <div class="form-group">
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="city" placeholder="City">
 
-    <button onclick="sendWhatsApp()">Apply on WhatsApp</button>
+        <select id="experience">
+            <option value="">Experience Level</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Expert</option>
+        </select>
 
-    <p class="note">
-        Starting commission: 10% (can increase based on performance)
-    </p>
+        <select id="interest">
+            <option value="">Interest Area</option>
+            <option>Sales</option>
+            <option>Marketing</option>
+            <option>Lead Generation</option>
+            <option>Freelancing</option>
+        </select>
+
+        <textarea id="message" rows="4" placeholder="Why do you want to join?"></textarea>
+    </div>
+
+    <button onclick="sendWhatsApp()">📲 Submit on WhatsApp</button>
+
+    <div class="note">
+        By applying, you agree to basic commission terms (starting 10%).
+    </div>
+</div>
+
 </div>
 
 <script>
-function sendWhatsApp() {
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let city = document.getElementById("city").value;
-    let experience = document.getElementById("experience").value;
-    let message = document.getElementById("message").value;
+function sendWhatsApp(){
 
-    let text =
-`*New Commission Partner Application*
+    let name=document.getElementById("name").value;
+    let phone=document.getElementById("phone").value;
+    let email=document.getElementById("email").value;
+    let city=document.getElementById("city").value;
+    let exp=document.getElementById("experience").value;
+    let interest=document.getElementById("interest").value;
+    let msg=document.getElementById("message").value;
+
+    let text = `*New Partner Application*
 
 Name: ${name}
 Phone: ${phone}
 Email: ${email}
 City: ${city}
-Experience: ${experience}
+Experience: ${exp}
+Interest: ${interest}
 
-Reason:
-${message}
+Message:
+${msg}
 
-Offer: Starting 10% commission (performance based increase available)`;
+Agreement: Starting 10% commission (performance-based increase available)`;
 
     let url = "https://wa.me/917798919864?text=" + encodeURIComponent(text);
 
