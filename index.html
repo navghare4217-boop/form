@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commission Partner Application</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 500px;
+        background: #fff;
+        padding: 20px;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #25D366;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #1ebe5d;
+    }
+    .note {
+        font-size: 12px;
+        color: gray;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Commission Partner Form</h2>
+
+    <input type="text" id="name" placeholder="Full Name" required>
+
+    <input type="text" id="phone" placeholder="Phone Number" required>
+
+    <input type="email" id="email" placeholder="Email (optional)">
+
+    <input type="text" id="city" placeholder="City">
+
+    <select id="experience">
+        <option value="">Do you have experience?</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select>
+
+    <textarea id="message" rows="4" placeholder="Why do you want to join?"></textarea>
+
+    <button onclick="sendWhatsApp()">Apply on WhatsApp</button>
+
+    <p class="note">
+        Starting commission: 10% (can increase based on performance)
+    </p>
+</div>
+
+<script>
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let city = document.getElementById("city").value;
+    let experience = document.getElementById("experience").value;
+    let message = document.getElementById("message").value;
+
+    let text =
+`*New Commission Partner Application*
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+City: ${city}
+Experience: ${experience}
+
+Reason:
+${message}
+
+Offer: Starting 10% commission (performance based increase available)`;
+
+    let url = "https://wa.me/917798919864?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
